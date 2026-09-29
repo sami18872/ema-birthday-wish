@@ -1,0 +1,872 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #fff8fa;
+    color: #4a3440;
+    overflow-x: hidden;
+}
+
+body.locked {
+    overflow: hidden;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+#hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.heart-particle {
+    position: absolute;
+    bottom: -30px;
+    font-size: 20px;
+    animation: floatHeart linear forwards;
+    opacity: 0;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.8);
+
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    z-index: 200;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.08);
+
+    transition: .3s;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e2 0%, transparent 30%),
+        radial-gradient(circle at 80% 80%, #e6d7ff 0%, transparent 30%),
+        #fff8fa;
+
+}
+
+.hero-content {
+
+    max-width: 700px;
+
+    animation: heroAppear 1.5s ease forwards;
+
+}
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.small-text {
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #a36a7d;
+
+    margin-bottom: 25px;
+
+}
+
+.hero h1 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(55px, 10vw, 110px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #593d4a;
+
+}
+
+.hero h1 span {
+
+    display: inline-block;
+
+    animation: heartbeat 1.5s infinite;
+
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+.subtitle {
+
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    line-height: 1.8;
+
+    color: #806773;
+
+}
+
+.main-btn,
+.letter-btn {
+
+    border: none;
+
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    background: #d96c91;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow: 0 12px 30px rgba(217,108,145,.3);
+
+    transition: .3s;
+
+}
+
+.main-btn:hover,
+.letter-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 18px 35px rgba(217,108,145,.4);
+
+}
+
+.scroll {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    font-size: 25px;
+
+    animation: bounce 2s infinite;
+
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+section {
+
+    padding: 110px 20px;
+
+}
+
+.section-label {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #b17b8d;
+
+    margin-bottom: 18px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday-section {
+
+    text-align: center;
+
+    background: white;
+
+}
+
+.birthday-section h2 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    font-weight: 400;
+
+}
+
+.birthday-section h3 {
+
+    font-family: "Sacramento", cursive;
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    font-weight: 400;
+
+    color: #d96c91;
+
+}
+
+.birthday-date {
+
+    margin-top: 10px;
+
+    color: #987180;
+
+    letter-spacing: 3px;
+
+}
+
+.divider {
+
+    margin: 35px auto;
+
+    color: #d96c91;
+
+    font-size: 25px;
+
+}
+
+.intro {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 2;
+
+    color: #765e69;
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+
+    text-align: center;
+
+    background: #fff0f4;
+
+}
+
+.countdown-section h2 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    margin-bottom: 50px;
+
+}
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+}
+
+.time-box {
+
+    width: 130px;
+
+    height: 130px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    box-shadow: 0 15px 40px rgba(100,50,70,.08);
+
+}
+
+.time-box span {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 45px;
+
+    color: #d96c91;
+
+}
+
+.time-box small {
+
+    color: #94727e;
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-section {
+
+    text-align: center;
+
+    background: white;
+
+}
+
+.message-container {
+
+    max-width: 700px;
+
+    margin: auto;
+
+}
+
+.message-container h2 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+
+}
+
+.message-container p:not(.section-label) {
+
+    line-height: 2;
+
+    color: #765e69;
+
+    margin-bottom: 20px;
+
+}
+
+.heart {
+
+    margin-top: 35px;
+
+    font-size: 40px;
+
+    color: #d96c91;
+
+    animation: heartbeat 1.5s infinite;
+
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+
+    background: #fff8fa;
+
+    text-align: center;
+
+}
+
+.gallery-section h2 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+}
+
+.gallery-intro {
+
+    margin: 20px auto 50px;
+
+    color: #806773;
+
+}
+
+.gallery {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+.photo-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow: 0 15px 40px rgba(70,40,50,.08);
+
+}
+
+.photo-card img {
+
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .7s ease;
+
+}
+
+.photo-card:hover img {
+
+    transform: scale(1.05);
+
+}
+
+.photo-card span {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    right: 15px;
+
+    background: rgba(255,255,255,.85);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise-section {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(circle at 20% 30%, #ffd7e4, transparent 30%),
+
+        radial-gradient(circle at 80% 70%, #e8dcff, transparent 30%),
+
+        #fff5f8;
+
+}
+
+.surprise-content h2 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+
+}
+
+.surprise-content p:not(.section-label) {
+
+    margin-bottom: 35px;
+
+    color: #806773;
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(40,20,30,.65);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 500;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .4s;
+
+}
+
+.letter-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+.letter {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #fffaf5;
+
+    padding: 55px;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    box-shadow: 0 30px 100px rgba(0,0,0,.3);
+
+    transform: translateY(30px) scale(.95);
+
+    transition: .4s;
+
+}
+
+.letter-overlay.active .letter {
+
+    transform: translateY(0) scale(1);
+
+}
+
+.close-btn {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    background: none;
+
+    border: none;
+
+    font-size: 35px;
+
+    color: #765e69;
+
+    cursor: pointer;
+
+}
+
+.letter-top {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+
+}
+
+.letter h2 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+}
+
+.letter p {
+
+    line-height: 2;
+
+    margin-bottom: 18px;
+
+    color: #6d5660;
+
+}
+
+.final-line {
+
+    font-weight: 600;
+
+    color: #d05f87 !important;
+
+    font-size: 18px;
+
+}
+
+.signature {
+
+    font-family: "Sacramento", cursive;
+
+    font-size: 30px;
+
+    margin-top: 30px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: #3e2c35;
+
+    color: white;
+
+}
+
+.footer-heart {
+
+    font-size: 30px;
+
+    color: #ff91b2;
+
+    margin-bottom: 15px;
+
+}
+
+footer p {
+
+    margin-bottom: 10px;
+
+}
+
+footer small {
+
+    color: #cbbbc1;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    section {
+        padding: 80px 18px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .time-box {
+        width: 105px;
+        height: 105px;
+    }
+
+    .time-box span {
+        font-size: 35px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 430px;
+    }
+
+    .letter {
+        padding: 40px 25px;
+    }
+
+    .music-btn {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        right: 15px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .time-box {
+        width: 80px;
+        height: 90px;
+    }
+
+    .time-box span {
+        font-size: 28px;
+    }
+
+}
